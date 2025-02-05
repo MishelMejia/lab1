@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <form id="converter-form">
+        <label for="conversion-type">Choose conversion type:</label>
+        <select id="conversion-type" name="conversion-type">
+            <option value="kgToLb">Kilograms to Pounds</option>
+            <option value="lbToKg">Pounds to Kilograms</option>
+        </select>
+        <br>
+        <label for="value">Enter value:</label>
+        <input type="number" id="value" name="value" required>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function kgToLb(kg) {
+            return kg * 2.20462;
+        }
+
+        function lbToKg(lb) {
+            return lb / 2.20462;
+        }
+
+        document.getElementById('converter-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const conversionType = document.getElementById('conversion-type').value;
+            const value = parseFloat(document.getElementById('value').value);
+            let result;
+
+            if (isNaN(value) || value <= 0) {
+                result = 'Please enter a valid positive number.';
+            } else {
+                switch (conversionType) {
+                    case 'kgToLb':
+                        result = `${value} kg is equal to ${kgToLb(value).toFixed(2)} lb.`;
+                        break;
+                    case 'lbToKg':
+                        result = `${value} lb is equal to ${lbToKg(value).toFixed(2)} kg.`;
+                        break;
+                    default:
+                        result = 'Invalid conversion type selected.';
+                }
+            }
+
+            document.getElementById('result').textContent = result;
+        });
+    </script>
+</body>
+</html>
+

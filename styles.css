@@ -1,0 +1,188 @@
+#result {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: 0;
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: rgb(6, 7, 12);
+  font-family: inter;
+  background-image: url(background-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding: 0 10%;
+}
+
+label {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+select, input {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007acc;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f99;
+}
+
+/* Header */
+#header, nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 1;
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 60px;
+  transition: color 0.12s, transform 0.12s;
+}
+
+nav .active {
+  color: #3FA2F6;
+}
+
+.nav-item:hover {
+  color: #3FA2F6;
+}
+
+.nav-item:active {
+  transform: scale(1.1);
+}
+
+/* logo */
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Form adjustments */
+form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  text-align: left;
+}
+
+h1{
+  font-size: 4rem;
+  font-weight: 800;
+  padding: 25px 0;
+  color: white;
+}
+
+p {
+  font-size: 1.2rem;
+  color: lightgray;
+  line-height: 1.5;
+  padding-bottom: 50px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInTop {
+  from{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundZoom {
+  from{
+    background-size: 80%;
+  }
+  to{
+    background-size: 100%;
+  }
+}
+
+
+
+
+/* Apply Animations */
+h1 {
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+h3 {
+  animation: fadeIn 1.4s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+p {
+  animation: fadeIn 1.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+button {
+  animation: fadeIn 1.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.8s;
+}
+
+.social-icon {
+  animation: fadeIn 2s ease-out forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+.nav-item,
+.left-section {
+  animation: fadeInTop 1s ease-in forwards;
+  opacity: 0;
+}
+
+body {
+  animation: backgroundZoom 3s ease-in forwards;
+}
